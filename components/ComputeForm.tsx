@@ -1,28 +1,26 @@
 'use client';
 
-import Link from "next/link";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import * as z from 'zod';
 import { useRouter } from "next/navigation";
-import Results from "@/app/results/page";
 
 import { Button } from "@/components/ui/button";
 import {
     Form,
-    FormControl,
     FormDescription,
     FormField,
     FormItem,
     FormLabel,
-    FormMessage,
 } from "@/components/ui/form"
 import {
     Card,
     CardContent
 } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
-  
+import insert from "./insert";
+import { db } from "@/db";
+import { age } from "@/db/schema/age";
 
 const formSchema = z.object({
     day: z
@@ -49,9 +47,11 @@ export default function ComputeForm(){
         resolver: zodResolver(formSchema),
     })
 
-    function onSubmit(data: z.infer<typeof formSchema>){
-        
-        router.push('/results')
+    const onSubmit = async (data: z.infer<typeof formSchema>) => {
+        insert(data.day, data.month, data.year)
+        // const ages = await  db.select().from(age);
+
+        router.push(`/results`);
     }
 
 

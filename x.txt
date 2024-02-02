@@ -1,0 +1,7 @@
+CREATE TABLE age (
+    id SERIAL PRIMARY KEY,
+    day varchar(2),
+    month varchar(2),
+    year varchar(4),
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL
+);
