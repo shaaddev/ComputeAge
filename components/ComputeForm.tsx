@@ -18,9 +18,6 @@ import {
     CardContent
 } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
-import insert from "./insert";
-import { db } from "@/db";
-import { age } from "@/db/schema/age";
 
 const formSchema = z.object({
     day: z
@@ -48,9 +45,9 @@ export default function ComputeForm(){
     })
 
     const onSubmit = async (data: z.infer<typeof formSchema>) => {
-        insert(data.day, data.month, data.year)
-        // const ages = await  db.select().from(age);
-
+        localStorage.setItem("day", data.day);
+        localStorage.setItem("month", data.month);
+        localStorage.setItem("year", data.year);
         router.push(`/results`);
     }
 

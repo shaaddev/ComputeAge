@@ -1,4 +1,4 @@
-// 'use client'
+'use client'
 
 import {
     Card,
@@ -8,22 +8,31 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import ThemeSwitch from "@/components/ThemeSwitch";
 import { computeAge, current_date } from "@/components/calculateAge";
-import { eq } from "drizzle-orm";
-import { age } from "@/db/schema/age";
-import { db } from "@/db";
+import { useState, useEffect } from 'react';
 
-export default async function Results(){
-    // const { id } = params;
-    const user_age = await db.select().from(age).where(eq(age.id, 1));
+type Set = string | "0";
+
+export default function Results(){
+    const [day, setDay] = useState<Set>("0");
+    const [month, setMonth] = useState<Set>("0");
+    const [year, setYear] = useState<Set>("0");
+
+    useEffect(() => {
+        let _day = window.localStorage.getItem("day") as string | "0";
+        let _month = window.localStorage.getItem("month") as string | "0";
+        let _year = window.localStorage.getItem("year") as string | "0";
+
+        setDay(_day)
+        setMonth(_month)
+        setYear(_year)
+    }, [])  
 
 
-    let user_dob = `${user_age[0].year}-${user_age[0].month}-${user_age[0].day}`
 
-    const { ageYears, ageMonths, ageDays} = computeAge(parseInt(user_age[0].year), parseInt(user_age[0].month), parseInt(user_age[0].day))
+    let user_dob = `${parseInt(year)}-${parseInt(month)}-${parseInt(day)}`
 
-    const onSubmit = async () => {
-        await db.delete(age)
-    }
+    const { ageYears, ageMonths, ageDays} = computeAge(parseInt(year), parseInt(month), parseInt(day))
+
 
     return(
         <main className="flex  flex-col items-center justify-between p-24">
