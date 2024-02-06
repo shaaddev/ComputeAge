@@ -24,17 +24,17 @@ const formSchema = z.object({
         .string({
             required_error: "Please enter the day of your birthday",
             invalid_type_error: "Day must be a number"
-        }),
+        }).max(2).regex(/^(?:[1-9]|1[0-9]|2[0-9]|3[0-1])$/),
     month: z
         .string({
             required_error: "Please enter the month of your birthday",
             invalid_type_error: "Month must be a number"
-        }),
+        }).max(2).regex(/^(?:[1-9]|1[0-2])$/),
     year: z
         .string({
             required_error: "Please enter the year of your birthday",
             invalid_type_error: "Year must be a number"
-        })
+        }).max(4)
 })  
 
 export default function ComputeForm(){
