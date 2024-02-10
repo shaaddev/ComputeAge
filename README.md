@@ -1,12 +1,13 @@
-<h1 style="text-align:center;">Compute Age 🦄</h1>
-<p>From the Terminal to the User Interface, originally created in Java, this web app helps to calculate your age</p>
+<h1 align="center">Compute Age 🦄</h1>
+<p align="center">From the Terminal to the User Interface, originally created in Java, this web app helps to calculate your age</p>
 
 #
 
 <p align="center">
     <img style="" src="public/docs/1.png" alt="terminal" width="500" />
 </p>
-<h3 style="text-align:center;">⬇</h3>
+
+<h3 align="center">⬇</h3>
 
 <p align="center">
     <img style="" src="public/docs/2.png" alt="web-1" width="500"/>
