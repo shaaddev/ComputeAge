@@ -34,7 +34,7 @@ const formSchema = z.object({
         .string({
             required_error: "Please enter the year of your birthday",
             invalid_type_error: "Year must be a number"
-        }).max(4)
+        }).max(4).regex(/^(19[2-9][1-9]|20[0-1][0-9]|202[0-4])$/)
 })  
 
 export default function ComputeForm(){
