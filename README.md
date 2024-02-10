@@ -10,8 +10,8 @@
 <h3 align="center">⬇</h3>
 
 <p align="center">
-    <img style="" src="public/docs/2.png" alt="web-1" width="500"/>
-    <img style="" src="public/docs/3.png" alt="web-2" width="500"/>
+    <img style="" src="public/docs/2.png" alt="web-1" width="700"/>
+    <img style="" src="public/docs/3.png" alt="web-2" width="700"/>
 </p>
 
 ## 🌎 Set up 🛠
