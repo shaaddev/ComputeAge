@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
 import "./globals.css";
+import { Providers } from "./providers";
 
 const mont = Montserrat({ subsets: ["latin"] });
 
@@ -15,11 +16,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body className={mont.className && 'bg-indigo-400 dark:bg-neutral-950'}>
-        <main>
-          {children}
-        </main>
+        <Providers>
+          <main>
+            {children}
+          </main>
+        </Providers>
       </body>
     </html>
   );
