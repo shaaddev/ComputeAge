@@ -64,7 +64,7 @@ export default function ComputeForm(){
                                 render={({ field }) => (
                                     <FormItem>
                                         <FormLabel>Day</FormLabel>
-                                        <Input {...field} className="border border-black border-opacity-10 dark:border-opacity-10 dark:border-white"/>
+                                        <Input {...field} className="border border-black border-opacity-10 dark:border-opacity-10 dark:border-white" aria-label="day input"/>
                                         <FormDescription className="opacity-50">
                                             Enter the Day you were born (1 - 31)
                                         </FormDescription>
@@ -77,7 +77,7 @@ export default function ComputeForm(){
                                 render={({ field }) => (
                                     <FormItem>
                                         <FormLabel>Month</FormLabel>
-                                        <Input {...field} className="border border-black border-opacity-10 dark:border-opacity-10 dark:border-white"/>
+                                        <Input {...field} className="border border-black border-opacity-10 dark:border-opacity-10 dark:border-white" aria-label="month input"/>
                                         <FormDescription className="opacity-50">
                                             Enter the Month you were born (1 - 12)
                                         </FormDescription>
@@ -90,7 +90,7 @@ export default function ComputeForm(){
                                 render={({ field }) => (
                                     <FormItem>
                                         <FormLabel>Year</FormLabel>
-                                        <Input {...field} className="border border-black border-opacity-10 dark:border-opacity-10 dark:border-white"/>
+                                        <Input {...field} className="border border-black border-opacity-10 dark:border-opacity-10 dark:border-white" aria-label="year input"/>
                                         <FormDescription className="opacity-50">
                                             Enter the year you were born
                                         </FormDescription>
